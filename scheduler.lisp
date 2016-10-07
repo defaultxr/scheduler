@@ -132,27 +132,27 @@
 ;;; Scheduler library have *main-scheduler*. This API are functions for only *main-scheduler*.
 ;;; Unless you needs multiple scheduler, use this API.
 
-;; (defparameter *main-scheduler* (make-instance 'scheduler :name "main"))
+(defparameter *main-scheduler* (make-instance 'scheduler :name "main"))
 
-;; (defparameter *scheduling-mode* :realtime)
+(defparameter *scheduling-mode* :realtime)
 
-;; (defun callback (time f &rest args)
-;;   (ecase *scheduling-mode*
-;;     (:realtime (sched-add *main-scheduler* time (lambda () (apply f args))) )
-;;     (:step (apply f args))))
+(defun callback (time f &rest args)
+  (ecase *scheduling-mode*
+    (:realtime (sched-add *main-scheduler* time (lambda () (apply f args))) )
+    (:step (apply f args))))
 
-;; (defun scheduler-running-p ()
-;;   (eql (sched-status *main-scheduler*) :running))
+(defun scheduler-running-p ()
+  (eql (sched-status *main-scheduler*) :running))
 
-;; (defun scheduler-start ()
-;;   (sched-run *main-scheduler*))
+(defun scheduler-start ()
+  (sched-run *main-scheduler*))
 
-;; (defun scheduler-clear ()
-;;   (sched-clear *main-scheduler*))
+(defun scheduler-clear ()
+  (sched-clear *main-scheduler*))
 
-;; (defun scheduler-stop ()
-;;   (sched-stop *main-scheduler*))
+(defun scheduler-stop ()
+  (sched-stop *main-scheduler*))
 
-;; (defun now ()
-;;   (sched-time *main-scheduler*))
+(defun now ()
+  (sched-time *main-scheduler*))
 

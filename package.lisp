@@ -17,13 +17,13 @@
 	   #:sched-status
 	   #:sched-ahead
 	   
-	   ;; #:*main-scheduler*
-	   ;; #:callback
-	   ;; #:scheduler-running-p
-	   ;; #:scheduler-start
-	   ;; #:scheduler-clear
-	   ;; #:scheduler-stop
-	   ;; #:now
+	   #:*main-scheduler*
+	   #:callback
+	   #:scheduler-running-p
+	   #:scheduler-start
+	   #:scheduler-clear
+	   #:scheduler-stop
+	   #:now
 	   
 	   ;; #:make-sync-tool
 	   ;; #:destroy-sync-tool
